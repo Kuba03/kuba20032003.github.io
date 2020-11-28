@@ -1,5 +1,6 @@
 # kuba20032003.github.io
 #My site
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -40,7 +41,8 @@
                         {% if item.photo %}
                         <img src="{{ item.photo.url }}" alt="" width="350" class="mr-3">
                         {% else %}
-                        <img src="https://picsum.photos/id/1060/350/235/?blur=2" alt="" class="mr-3">
+                     
+                        <img src="https://picsum.photos/seed/picsum/350/350/" alt="" class="mr-3">
                         {% endif %}
                         <div class="media-body">
                             <h5 class="card-title">{{ item.title }}</h5>
