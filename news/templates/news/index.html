@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }} :: {{ block.super }}
+{% endblock %}
+
+{% block sidebar %}
+{% include 'inc/_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+{% for item in news %}
+<div class="card mb-3">
+    <div class="card-header">
+        Категория: <a href="{{ item.category.get_absolute_url }}">{{ item.category }}</a>
+    </div>
+    <div class="card-body">
+        <div class="media">
+            {% if item.photo %}
+            <img src="{{ item.photo.url }}" alt="" width="350" class="mr-3">
+            {% else %}
+            <img src="https://st2.depositphotos.com/1152339/7939/i/950/depositphotos_79398224-stock-photo-news-concept-news-on-torn.jpg"width="200" height="200">
+            {% endif %}
+
+
+            <div class="media-body">
+                <h5 class="card-title">{{ item.title }}</h5>
+                <p  class="card-text">{{ item.content|safe|linebreaks|truncatewords:50 }}</p>
+
+                <style>
+                    body {background-color: #5e9e8e;}
+                    h1 {color: red;}
+                    p {color: blue;}
+                </style>
+
+                <a href="{{ item.get_absolute_url}}" class="btn btn-danger">Read more...</a>
+                
+            </div>
+        </div>
+
+    </div>
+    <div class="card-footer text-muted">
+        <b>{{ item.created_at|date:"Y-m-d H:i" }}</b>
+
+
+
+       
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+
+<div class="card" style="width: 18rem;">
+    <img src="https://gdb.rferl.org/29AE0A92-05B4-4F7A-9113-2212F521A071_w650_r1_s.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>

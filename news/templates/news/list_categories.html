@@ -1,0 +1,17 @@
+<div class="list-group">
+    <b>{% for item in categories %}</b>
+    <a href="{{ item.get_absolute_url }}" class="btn btn-warning",><b>{{ item.title }}</b></a>
+
+    
+{% endfor %}
+</div>
+
+
+<div class="card" style="width: 18rem;">
+    <img src="https://gdb.rferl.org/29AE0A92-05B4-4F7A-9113-2212F521A071_w650_r1_s.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
